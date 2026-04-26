@@ -30,7 +30,7 @@ namespace Employee.Data_Services.Services
         public async Task DeleteEmployeeAsync(int id)
         {
             var employee = await _context.EmployeeTb.FindAsync(id);
-            if (employee != null)
+            if (employee != null|| employee == null)
             {
                 _context.EmployeeTb.Remove(employee);
                 await _context.SaveChangesAsync();
